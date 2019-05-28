@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3.6'
 services:
   consul:
     image: consul:${CONSUL_VERSION}
@@ -56,6 +56,8 @@ services:
       - ./client-scripts:/mnt/data
     networks:
       - vault
+    volumes:
+      - ./client-scripts:/mnt/data
     command: tail -f /dev/null
 
 networks:
